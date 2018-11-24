@@ -38,5 +38,9 @@
   "bugs": {
     "url": "https://github.com/YatchiYa/BlitzKreig/issues"
   },
+  "sideEffects": [
+    "./src/some-side-effectful-file.js",
+    "*.css"
+  ],
   "homepage": "https://github.com/YatchiYa/BlitzKreig#readme"
 }

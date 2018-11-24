@@ -7,7 +7,7 @@ const ManifestPlugin = require('webpack-manifest-plugin');
 const webpack = require('webpack');
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   entry: {
     app: './src/index.js'
   },
