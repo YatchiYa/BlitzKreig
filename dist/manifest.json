@@ -1,4 +1,11 @@
 {
-  "app.js": "/app.bundle.js",
+  "app.js": "/app.9d900a824ca7599cb90e.js",
+  "app.js.map": "/app.9d900a824ca7599cb90e.js.map",
+  "print.js": "/print.9d900a824ca7599cb90e.js",
+  "print.js.map": "/print.9d900a824ca7599cb90e.js.map",
+  "runtime.js": "/runtime.9d900a824ca7599cb90e.js",
+  "runtime.js.map": "/runtime.9d900a824ca7599cb90e.js.map",
+  "vendors.js": "/vendors.9d900a824ca7599cb90e.js",
+  "vendors.js.map": "/vendors.9d900a824ca7599cb90e.js.map",
   "index.html": "/index.html"
 }

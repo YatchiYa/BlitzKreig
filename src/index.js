@@ -1,23 +1,39 @@
 // index.js file
 import _ from 'lodash';
-import printMe from './print.js';
 import style from '../static/style/style.css';
 
 function component() {
-  let element = document.createElement('div');
-  var btn = document.createElement('button');
+
+  if (process.env.NODE_ENV !== 'production') {
+    console.log('Looks like we are in development mode!');
+}
+
+  var element = document.createElement('div');
+  var button = document.createElement('button');
+  var br = document.createElement('br');
 
 
   // Lodash, currently included via a script, is required for this line to work
+  button.innerHTML = 'Click me and look at the console!';
   element.innerHTML = _.join(['Hello ', 'webpack '], ' ');
 
-  btn.innerHTML = 'Click me and check the console c: !';
-  btn.onclick = printMe;
 
-  element.appendChild(btn);
+  element.appendChild(br);
+  element.appendChild(button);
+
+
+// Note that because a network request is involved, some indication
+// of loading would need to be shown in a production-level site/app.
+
+button.onclick = e => import(/* webpackChunkName: "print" */ './print').then(module => {
+    var print = module.default;
+    print(" Hello ");
+  });
 
   return element;
  }
+
+
 
  // tell the webpack that when we change printJs changes, we update
 
@@ -32,4 +48,4 @@ function component() {
      document.body.appendChild(element);
     })
 
-}
+  }

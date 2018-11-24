@@ -1,3 +1,6 @@
-export default function printMe() {
-  console.log('Updating is print.js...');
-}
+
+console.log('The print.js module has loaded! See the network tab in dev tools...');
+
+export default function print(text) {
+  console.log(text);
+};
