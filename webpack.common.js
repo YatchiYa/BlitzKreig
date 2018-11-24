@@ -1,9 +1,12 @@
 // webpack config
 
+'use strict'
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
+const { VueLoaderPlugin } = require('vue-loader');
+
 const webpack = require('webpack');
 const glu_webpack = require('gulp');
 
@@ -27,7 +30,8 @@ module.exports = {
     }
   },
   entry: {
-    app: './src/index.js'
+    app: './src/index.js',
+    vue: './src/js/vue.js'
   },
    plugins: [
      new CleanWebpackPlugin(['dist']),
@@ -35,9 +39,10 @@ module.exports = {
      new webpack.optimize.ModuleConcatenationPlugin(),
      new webpack.HotModuleReplacementPlugin(),
      new webpack.HashedModuleIdsPlugin(),
+     new VueLoaderPlugin(),
 
      new HtmlWebpackPlugin({
-     title: 'BlitzKreig'
+     title: 'BlitzKreig',
    }),
 
   ],
@@ -50,6 +55,10 @@ module.exports = {
    },
    module: {
       rules: [
+        {
+          test: /\.vue$/,
+          use: 'vue-loader'
+        },
         {
           test: /\.css$/,
           exclude: /node_modules/,
