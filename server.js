@@ -6,12 +6,6 @@ const webpack = require('webpack');
 const webpackDevServer = require('webpack-dev-server');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 
-// to make images from ' all ' to .wbep
-const imagemin = require('imagemin');
-const imageminWebp = require('imagemin-webp');
-//
-var gulp = require('gulp');
-var glu_webpack = require('gulp-webpack');
 
 
 const app = express();
@@ -36,22 +30,6 @@ const server = new webpackDevServer(compiler, options);
 app.use(webpackDevMiddleware(compiler, {
   publicPath: config.output.publicPath
 }));
-
-
-
-imagemin(['images/*.{jpg}'], 'images', {
-    use: [
-        imageminWebp({quality: 60})
-    ]
-}).then(() => {
-    console.log("image resized ");
-});
-
-gulp.task('default', function() {
-  return gulp.src('src/entry.js')
-    .pipe(glu_webpack( require('./webpack.common.js') ))
-    .pipe(gulp.dest('dist/'));
-});
 
 
 

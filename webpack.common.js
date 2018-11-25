@@ -68,6 +68,14 @@ module.exports = {
           ]
         },
         {
+          test: /\.json$/,
+          use: 'file-loader',
+        },
+        {
+          test: /\.mp3$/,
+          use: 'file-loader?hash=sha512&digest=hex&name=[name]-[hash].[ext]',
+        },
+        {
           test: /\.(png|svg|jpg|gif)$/,
           use: [
             'file-loader'

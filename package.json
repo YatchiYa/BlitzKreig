@@ -9,6 +9,8 @@
     "imagemin": "^6.0.0",
     "imagemin-webp": "^4.1.0",
     "lodash": "^4.17.11",
+    "phaser-manifest-loader": "^3.1.0",
+    "phaser-webpack-loader": "^2.0.0",
     "postcss-loader": "^3.0.0",
     "vue": "^2.5.17",
     "vue-router": "^3.0.2"
@@ -27,6 +29,7 @@
     "vue-template-compiler": "^2.5.17",
     "webpack": "^4.26.0",
     "webpack-cli": "^3.1.2",
+    "webpack-dashboard": "^2.0.0",
     "webpack-dev-middleware": "^3.4.0",
     "webpack-dev-server": "^3.1.10",
     "webpack-manifest-plugin": "^2.0.4",
@@ -40,7 +43,8 @@
     "watch": "webpack --watch",
     "start": "webpack-dev-server --open --config webpack.dev.js",
     "server": "node server.js",
-    "check": "webpack --config webpack.prod.js"
+    "check": "webpack --config webpack.prod.js",
+    "hud": "webpack-dashboard -- node server.js"
   },
   "repository": {
     "type": "git",

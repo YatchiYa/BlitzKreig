@@ -1,13 +1,11 @@
 {
-  "runtime.js": "/runtime.9e232ce529ac171c6ded.js",
-  "runtime.js.map": "/runtime.9e232ce529ac171c6ded.js.map",
-  "vendors.js": "/vendors.9e232ce529ac171c6ded.js",
-  "vendors.js.map": "/vendors.9e232ce529ac171c6ded.js.map",
-  "app.js": "/app.9e232ce529ac171c6ded.js",
-  "app.js.map": "/app.9e232ce529ac171c6ded.js.map",
-  "print.js": "/print.9e232ce529ac171c6ded.js",
-  "print.js.map": "/print.9e232ce529ac171c6ded.js.map",
-  "vue.js": "/vue.9e232ce529ac171c6ded.js",
-  "vue.js.map": "/vue.9e232ce529ac171c6ded.js.map",
+  "runtime.js": "/runtime.6a24e4950005d4a308cb.js",
+  "runtime.js.map": "/runtime.6a24e4950005d4a308cb.js.map",
+  "vendors.js": "/vendors.6a24e4950005d4a308cb.js",
+  "vendors.js.map": "/vendors.6a24e4950005d4a308cb.js.map",
+  "app.js": "/app.6a24e4950005d4a308cb.js",
+  "app.js.map": "/app.6a24e4950005d4a308cb.js.map",
+  "vue.js": "/vue.6a24e4950005d4a308cb.js",
+  "vue.js.map": "/vue.6a24e4950005d4a308cb.js.map",
   "index.html": "/index.html"
 }
