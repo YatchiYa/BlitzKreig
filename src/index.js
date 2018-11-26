@@ -1,6 +1,6 @@
 // index.js file
 import _ from 'lodash';
-import style from '../static/style/style.css';
+// import style from '../static/style/style.css';
 
 function component() {
 
@@ -8,9 +8,7 @@ function component() {
     console.log('Looks like we are in development mode!');
 }
 
-  var vue = document.createElement('div');
-  vue.setAttribute("id", "app");
-    document.body.appendChild(vue);
+  var vue = document.createElement('div');  vue.setAttribute("id", "app");  document.body.appendChild(vue);
 
 }
 let element = component(); // Store the element to re-render on print.js changes

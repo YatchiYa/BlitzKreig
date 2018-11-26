@@ -1,4 +1,9 @@
 body {
   background: rgba(0,0,0,0.95);
   color : red;
+  cursor: none;
+}
+
+canvas{
+  width: 1520px;
 }

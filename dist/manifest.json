@@ -1,11 +1,13 @@
 {
-  "runtime.js": "/runtime.6a24e4950005d4a308cb.js",
-  "runtime.js.map": "/runtime.6a24e4950005d4a308cb.js.map",
-  "vendors.js": "/vendors.6a24e4950005d4a308cb.js",
-  "vendors.js.map": "/vendors.6a24e4950005d4a308cb.js.map",
-  "app.js": "/app.6a24e4950005d4a308cb.js",
-  "app.js.map": "/app.6a24e4950005d4a308cb.js.map",
-  "vue.js": "/vue.6a24e4950005d4a308cb.js",
-  "vue.js.map": "/vue.6a24e4950005d4a308cb.js.map",
+  "runtime.js": "/runtime.1527512854c93910639b.js",
+  "runtime.js.map": "/runtime.1527512854c93910639b.js.map",
+  "vendors.js": "/vendors.1527512854c93910639b.js",
+  "vendors.js.map": "/vendors.1527512854c93910639b.js.map",
+  "app.js": "/app.1527512854c93910639b.js",
+  "app.js.map": "/app.1527512854c93910639b.js.map",
+  "game.js": "/game.1527512854c93910639b.js",
+  "game.js.map": "/game.1527512854c93910639b.js.map",
+  "vue.js": "/vue.1527512854c93910639b.js",
+  "vue.js.map": "/vue.1527512854c93910639b.js.map",
   "index.html": "/index.html"
 }
