@@ -23,6 +23,7 @@ export default {
 <style>
 #gamePart{
   overflow : hidden;
+  background: black;
 }
 #gamePart > canvas {
   cursor : none;

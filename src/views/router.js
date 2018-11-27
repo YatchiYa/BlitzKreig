@@ -7,6 +7,7 @@ import App from './App.vue'
 import caroussel from './homePage/caroussel.vue'
 import taverne from './homePage/taverne/taverne.vue'
 import landingGame from './homePage/gameWorld/landingGame.vue'
+import mini_tchat from './homePage/taverne/mini_tchat.vue'
 
 Vue.use(Router);
 Vue.use(Carousel3d);
@@ -14,7 +15,6 @@ Vue.use(Vuetify);
 
 
 const router =  new Router({
-//  mode:'history',  to avoid on the link : /#/
   routes: [
   	{
       path: '/',
@@ -30,6 +30,11 @@ const router =  new Router({
       path: '/landingGame',
       name: 'landingGame',
       component: landingGame
+    },
+    {
+      path: '/mini_tchat',
+      name: 'mini_tchat',
+      component: mini_tchat
     }
   ]
 });
