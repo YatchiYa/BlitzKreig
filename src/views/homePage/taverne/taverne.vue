@@ -1,7 +1,7 @@
 <template>
   <div id="taverne">
 
-    <header> <span id="tav"> Taverne </span> </header>
+    <header> <span id="tav"> Tavern </span> </header>
 
     <div id="chatBox"> chat Box ! </div>
 
@@ -28,7 +28,7 @@ export default {
 
 <style>
 #taverne{
-  background: url('../../../js/assets/homePage/tav.jpg');
+  background: url('../../../../static/assets/homePage/tav.jpg');
   background-size: cover;
   overflow: auto;
 }

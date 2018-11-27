@@ -5,8 +5,8 @@ import Vuetify from 'vuetify'
 
 import App from './App.vue'
 import caroussel from './homePage/caroussel.vue'
-import menu from './homePage/menu.vue'
 import taverne from './homePage/taverne/taverne.vue'
+import landingGame from './homePage/gameWorld/landingGame.vue'
 
 Vue.use(Router);
 Vue.use(Carousel3d);
@@ -25,6 +25,11 @@ const router =  new Router({
       path: '/taverne',
       name: 'taverne',
       component: taverne
+    },
+    {
+      path: '/landingGame',
+      name: 'landingGame',
+      component: landingGame
     }
   ]
 });

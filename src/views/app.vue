@@ -21,7 +21,7 @@ export default {
 <style>
 body{
   margin: 0;
-  background-size : cover;
+  background: black;
   filter : blur;
 }
 #app{

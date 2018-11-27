@@ -40,8 +40,8 @@ module.exports = {
   },
   entry: {
     app: './src/index.js',
-    // game: './src/js/homePage.js',
-    vue: './src/js/setting/vue.js'
+    vue: './src/js/setting/vue.js',
+    // game: './src/js/setting/homePhaser.js'
   },
    plugins: [
      new CleanWebpackPlugin(['dist']),

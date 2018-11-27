@@ -9,7 +9,7 @@
         </slide> -->
 
           <slide id="firstSlide" :index="0" style="height:400px; width:500px;">
-            <h1 @click="goTaverne()"> Taverne </h1>
+            <h1 @click="goTaverne()"> Tavern </h1>
           </slide>
 
           <slide id="secondSlide" :index="1" style="height:400px; width:500px;">
@@ -17,12 +17,12 @@
           </slide>
 
           <slide id="thirdSlide" :index="2" style="height:400px; width:500px;">
-            <h1> Game </h1>
+            <h1 @click="goGame()"> Game </h1>
           </slide>
         </carousel-3d>
 
 
-          <img id="imgsrc" src="../../js/assets/homePage/logo.png" alt="grow logo" />
+          <img id="imgsrc" src="../../../static/assets/homePage/logo.png" alt="grow logo" />
   </div>
 </template>
 
@@ -30,15 +30,19 @@
 <script>
 
 import { Carousel3d, Slide } from 'vue-carousel-3d'
-import Menu from './menu.vue'
 
 export default {
   name : 'App',
-  components: { Menu, Carousel3d, Slide },
+  components: { Carousel3d, Slide },
   methods: {
     goTaverne() {
       this.$router.push({
         name:'taverne'
+      });
+    },
+    goGame() {
+      this.$router.push({
+        name: 'landingGame'
       });
     }
   }
@@ -50,7 +54,7 @@ export default {
 
 <style>
 #carrousel {
-    background: url("../../js/assets/homePage/main2.jpg");
+    background: url("../../../static/assets/homePage/main2.jpg");
         background-size: auto auto;
     position: absolute;
     width: 100%;
@@ -61,20 +65,20 @@ export default {
 
 #firstSlide{
   cursor : pointer;
-  background: url('../../js/assets/homePage/taverne.jpg');
+  background: url('../../../static/assets/homePage/taverne.jpg');
   background-size : 100% 100%;
 }
 
 
 #secondSlide{
   cursor : pointer;
-  background: url('../../js/assets/homePage/game.jpg');
+  background: url('../../../static/assets/homePage/game.jpg');
   background-size : 100% 100%;
 }
 
 #thirdSlide{
   cursor : pointer;
-  background: url('../../js/assets/homePage/gam.jpg');
+  background: url('../../../static/assets/homePage/gam.jpg');
   background-size : 100% 100%;
 }
 
@@ -91,8 +95,8 @@ h1{
   position: absolute;
   left: 40%;
   top: 0%;
-  color: whitesmoke;
-  text-shadow: 5px 5px 4px cornsilk;
+  color: #ce21d3;
+  text-shadow: 3px 1px 5px cornsilk;
 }
 
 
