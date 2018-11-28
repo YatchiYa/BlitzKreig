@@ -25,8 +25,9 @@ body{
 }
 #app{
   position : absolute;
-  width: 100%;
+  width: 1535px;
   height : 100%;
+  overflow: auto;
 }
 
 </style>

@@ -7,7 +7,7 @@ import App from './App.vue'
 import caroussel from './homePage/caroussel.vue'
 import taverne from './homePage/taverne/taverne.vue'
 import landingGame from './homePage/gameWorld/landingGame.vue'
-import mini_tchat from './homePage/taverne/mini_tchat.vue'
+import auth from './homePage/taverne/auth.vue'
 
 Vue.use(Router);
 Vue.use(Carousel3d);
@@ -32,9 +32,9 @@ const router =  new Router({
       component: landingGame
     },
     {
-      path: '/mini_tchat',
-      name: 'mini_tchat',
-      component: mini_tchat
+      path: '/auth',
+      name: 'auth',
+      component: auth
     }
   ]
 });

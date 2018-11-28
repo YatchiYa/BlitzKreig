@@ -42,7 +42,7 @@ export default {
     },
     goGame() {
       this.$router.push({
-        name: 'landingGame'
+        name: 'auth'
       });
     }
   }
