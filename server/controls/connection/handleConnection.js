@@ -3,11 +3,14 @@ var Login = require('../../models/Login');
 const express = require('express');
 var router = express.Router();
 var jwt = require('jsonwebtoken');
+var passport = require('passport');
+var settings = require('../settings');
+require('../passport')(passport);
 const app = express();
 var helmet = require('helmet'); // secure data from the different atks http://expressjs.com/fr/advanced/best-practice-security.html
 
 var session = require('client-sessions');
-console.log(" befor the login : " +session.user);
+console.log(" the session user is : " + session.user);
 app.use(session({
   cookieName: 'session',
   secret: ' DevilEarthIsHere',
@@ -38,16 +41,11 @@ app.use(session({
 );
 */
 
-
-
-
-console.log(session);
-
 app.use(helmet());
 app.disable('x-powered-by');
 
 // secret text
-app.set('superSecret',"sucretLife");
+app.set('superSecret',settings.secret);
 
 router.route('/register/')
 	.post(function(req, res) {
@@ -60,6 +58,7 @@ router.route('/register/')
 			if(user_data){
 				return res.json({
 					status : 409,
+          success: false,
 					message : "User already exist"
 				});
 			}
@@ -74,6 +73,7 @@ router.route('/register/')
 					return res.status(400).send(err);
 				res.json({
 					status: 200,
+          success: true,
 					message : 'You have succesfully registered.'
 				});
 			});
@@ -86,25 +86,28 @@ router.route('/register/')
   			if(err || !user_data){
   				return res.status(401).json({
   					status : 401,
+            success: false,
   					message : "Invalid username and password.",
   				});
   			} else {
-          session.user = user_data.username;
-          chckSession();
-          console.log(" the session user is : " + session.user);
-          console.log("the user is : " +user_data.username);
-          // first part which send the data
-  				const payload = {
-        				username: user_data.username
-      			};
-      			var token = jwt.sign(payload, app.get('superSecret'), {
-            			expiresIn : 60*60*24 // expires in 24 hours
-      			});
-  				res.json({
-  					message : "You have succesfully loggedin.",
-            status: 200,
-  					token	: token
-  				});
+                session.user = user_data.username;
+                chckSession();
+                console.log(" the session user is : " + session.user);
+                console.log("the user is : " +user_data.username);
+                // first part which send the data
+
+        				const payload = {
+              				username: user_data.username
+            			};
+            			var token = jwt.sign(payload, settings.secret, {
+                  			expiresIn : 60*60*24 // expires in 24 hours
+            			});
+        				res.json({
+        					message : "You have succesfully loggedin.",
+                  success: true,
+                  status: 200,
+        					token	: 'JWT ' + token
+        				});
 
 
   			}
@@ -112,15 +115,17 @@ router.route('/register/')
   	});
 
 
+    // logout function
+    router.route('/logout')
+      .post(function(req, res) {
+        req.session.reset();
+        });
+
 function chckSession(){
   return session.user;
 }
 
-// logout function
-app.get('/logout', function(req, res) {
-  req.session.reset();
-  res.redirect('/');
-});
+
 
 // trying to set our session app
 

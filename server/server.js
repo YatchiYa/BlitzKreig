@@ -71,9 +71,10 @@ mongoose.connection.once('open',function(){
 // route for our app
 
 var router = require('./controls/connection/handleConnection.js');
+var initialization = require('./controls/connection/check.js');
 
 app.use('/api',router);
-
+app.use('/initialization',initialization);
 
 
 
@@ -87,3 +88,7 @@ app.use('/api',router);
 app.use(webpackDevMiddleware(compiler, {
   publicPath: config.output.publicPath
 }));
+
+
+
+module.exports = app;

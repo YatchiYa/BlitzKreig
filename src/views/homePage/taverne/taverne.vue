@@ -1,7 +1,7 @@
 <template>
   <div id="taverne">
 
-    <header> <span id="tav"> Tavern </span> </header>
+    <header> <div id="tav"> Tavern </div> </header>
 
     <div id="chatBox"> chat Box ! </div>
 

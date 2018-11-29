@@ -42,6 +42,7 @@ export default {
         // JSON responses are automatically parsed.
         this.form = response.data;
         if(this.form.status === 200){
+        localStorage.setItem('jwtToken', this.form.token);
           alert(this.form.message);
           this.$router.push({
             name: 'landingGame'

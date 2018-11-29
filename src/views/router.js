@@ -9,6 +9,7 @@ import gameLand from './homePage/gameLand.vue'
 import taverne from './homePage/taverne/taverne.vue'
 import landingGame from './homePage/gameWorld/landingGame.vue'
 import auth from './homePage/taverne/auth.vue'
+import chat from './homePage/taverne/chat.vue'
 
 Vue.use(Router);
 Vue.use(Carousel3d);
@@ -43,6 +44,11 @@ const router =  new Router({
       path: '/gameLand',
       name: 'gameLand',
       component: gameLand
+    },
+    {
+      path: '/chat',
+      name: 'chat',
+      component: chat
     }
   ]
 });

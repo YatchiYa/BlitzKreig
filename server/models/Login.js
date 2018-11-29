@@ -9,6 +9,7 @@ var validateEmail = function(email) {
 var LoginSchema   = new Schema({
     username: {
     	type : String,
+      unique: true,
 	 	required: 'Please provide the username'
     },
     password:  {
@@ -18,7 +19,7 @@ var LoginSchema   = new Schema({
   	confirm_password : {
   		type : String,
   		required : "Please provide the confirm password." ,
-  		validate: [passwordConfirm, 'Password and confirm password ......']	
+  		validate: [passwordConfirm, 'Password and confirm password ......']
   	},
   	email: {
         type: String,
