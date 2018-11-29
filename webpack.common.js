@@ -29,13 +29,14 @@ module.exports = {
   optimization: {
     runtimeChunk : 'single',
     splitChunks: {
-      cacheGroups: {
+      /*cacheGroups: {
         vendor: {
           test: /[\\/]node_modules[\\/]/,
           name: 'vendors',
           chunks: 'all'
         }
-      }
+      }*/
+      chunks:  'all'
     }
   },
   entry: {
