@@ -5,6 +5,7 @@ import Vuetify from 'vuetify'
 
 import App from './App.vue'
 import caroussel from './homePage/caroussel.vue'
+import gameLand from './homePage/gameLand.vue'
 import taverne from './homePage/taverne/taverne.vue'
 import landingGame from './homePage/gameWorld/landingGame.vue'
 import auth from './homePage/taverne/auth.vue'
@@ -12,6 +13,8 @@ import auth from './homePage/taverne/auth.vue'
 Vue.use(Router);
 Vue.use(Carousel3d);
 Vue.use(Vuetify);
+
+
 
 
 const router =  new Router({
@@ -35,6 +38,11 @@ const router =  new Router({
       path: '/auth',
       name: 'auth',
       component: auth
+    },
+    {
+      path: '/gameLand',
+      name: 'gameLand',
+      component: gameLand
     }
   ]
 });

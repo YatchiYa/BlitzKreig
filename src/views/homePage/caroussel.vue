@@ -17,7 +17,7 @@
           </slide>
 
           <slide id="thirdSlide" :index="2" style="height:400px; width:500px;">
-            <h1 @click="goGame()"> Game </h1>
+            <h1 @click="goGame()"> Game Land  </h1>
           </slide>
         </carousel-3d>
 

@@ -113,14 +113,18 @@ router.route('/register/')
 
 
 function chckSession(){
-  console.log(" to verify ! the session is : "+ session.user);
+  return session.user;
 }
 
-
+// logout function
+app.get('/logout', function(req, res) {
+  req.session.reset();
+  res.redirect('/');
+});
 
 // trying to set our session app
 
 
 
 
-module.exports = router;
+module.exports = router, chckSession;
