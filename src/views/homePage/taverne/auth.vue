@@ -1,10 +1,9 @@
 <template>
   <div id="auth_template">
-    <span> Auth Tmplate </span>
 
     <div class="span_RL">
-      <img @click="isLogin" src= '../../../../static/assets/homePage/login.png'  style="width: 11%; cursor:pointer; margin-right:25px;"/>
-        <img @click="isRegister" src= '../../../../static/assets/homePage/register.png'  style="width: 11%; cursor:pointer; "/>
+      <img @click="isLogin" src= '../../../../static/assets/homePage/login.png'  style="width: 11%; cursor:pointer; margin-right:25px; background: rgba(255,255,255,0.5); border-radius: 59px;"/>
+        <img @click="isRegister" src= '../../../../static/assets/homePage/register.png'  style="width: 11%; cursor:pointer;  background: rgba(255,255,255,0.5); border-radius: 59px;"/>
 
     </div>
 
@@ -81,7 +80,7 @@ span{
 .span_RL {
     display: flex;
     position: relative;
-    margin-left : 45%;
+    margin-left : 44%;
     margin-top: 4%;
 }
 
