@@ -15,6 +15,7 @@ app.use(session({
   cookieName: 'session',
   secret: ' DevilEarthIsHere',
   duration: 30 * 60 * 1000,
+  unset: 'destroy',
   activeDuration: 5 * 60 * 1000,
 }));
 
@@ -106,6 +107,7 @@ router.route('/register/')
         					message : "You have succesfully loggedin.",
                   success: true,
                   status: 200,
+                  sess: session.user,
         					token	: 'JWT ' + token
         				});
 
@@ -115,11 +117,13 @@ router.route('/register/')
   	});
 
 
-    // logout function
+    // logout function    /// not really defined to check af
     router.route('/logout')
-      .post(function(req, res) {
-        req.session.reset();
-        });
+    	.post(function(req, res){
+        res.json({
+            session: session.user
+        })
+      });
 
 function chckSession(){
   return session.user;

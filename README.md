@@ -7,3 +7,15 @@ https://nystudio107.com/blog/an-annotated-webpack-4-config-for-frontend-web-deve
 4- PostCss
 5- Moderne Legacy
 6- Cache Busting
+
+
+
+
+
+
+
+problemes :
+
+    // logout function    /// not really defined to check after
+    // the value on the input doesn't work ,,,,, why ? don't know !!
+    // add Emp taverne !!!

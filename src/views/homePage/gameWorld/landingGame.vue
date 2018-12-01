@@ -32,7 +32,8 @@ export default {
       localStorage.removeItem('jwtToken')
       this.$router.push({
         name: 'taverne'
-      })
+      });
+
     }
   },
   mounted() {

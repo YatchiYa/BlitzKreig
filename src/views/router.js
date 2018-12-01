@@ -10,6 +10,8 @@ import taverne from './homePage/taverne/taverne.vue'
 import landingGame from './homePage/gameWorld/landingGame.vue'
 import auth from './homePage/taverne/auth.vue'
 import chat from './homePage/taverne/chat.vue'
+import instantChat from './homePage/taverne/instantChat.vue'
+
 
 Vue.use(Router);
 Vue.use(Carousel3d);
@@ -49,6 +51,11 @@ const router =  new Router({
       path: '/chat',
       name: 'chat',
       component: chat
+    },
+    {
+      path: '/instantChat',
+      name: 'instantChat',
+      component: instantChat
     }
   ]
 });

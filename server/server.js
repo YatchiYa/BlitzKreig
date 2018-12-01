@@ -1,6 +1,9 @@
 // the server js file x
 
 
+const message = require('./models/message');
+
+
 const express = require('express');
 const webpack = require('webpack');
 const webpackDevServer = require('webpack-dev-server'); // seting the dev server webpack
@@ -72,13 +75,52 @@ mongoose.connection.once('open',function(){
 
 var router = require('./controls/connection/handleConnection.js');
 var initialization = require('./controls/connection/check.js');
+var chat = require('./controls/chat/chatHandler.js');
 
 app.use('/api',router);
 app.use('/initialization',initialization);
+app.use('/chat',chat);
 
 
 
 
+// socket part for the message !!!!!!   ->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+io.on('connection', (socket) => {
+    console.log(" you have connected from a socket !!")
+    io.emit('noOfConnections', Object.keys(io.sockets.connected).length)
+
+    socket.on('disconnect', () => {
+      console.log(" disconnected from socket !!!")
+      io.emit('noOfConnections', (Object.keys(io.sockets.connected).length))
+    })
+
+    // just to see the user login !
+    socket.on('Created', (data) => {
+        socket.broadcast.emit('Created', (data))
+    })
+
+
+    // fetch the saveMessages
+    socket.on('chat-message', (data) =>{
+        socket.broadcast.emit('chat-message', data)
+    })
+    socket.on('typing', (data) =>{
+        socket.broadcast.emit('typing', data)
+    })
+    socket.on('stoptyping', (data) =>{
+        socket.broadcast.emit('stoptyping')
+    })
+
+    socket.on('joined', (data) =>{
+        socket.broadcast.emit('joined', (data))
+    })
+    socket.on('leaved', (data) =>{
+        socket.broadcast.emit('leaved', (data))
+    })
+
+
+
+})
 
 
 

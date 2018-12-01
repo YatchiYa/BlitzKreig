@@ -57,14 +57,6 @@ export default {
     overflow: hidden;
 }
 
-span{
-  position: relative;
-  color: #ce21d3;
-  text-shadow: 3px 1px 5px cornsilk;
-  font-size: 30px;
-  left: 45%;
-  margin-bottom: 100px;
-}
 
 #register_template{
   width: 350px;
