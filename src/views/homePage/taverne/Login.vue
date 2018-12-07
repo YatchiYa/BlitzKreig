@@ -15,7 +15,6 @@
 
     </form>
 
-
   </div>
 </template>
 
@@ -45,7 +44,7 @@ export default {
         localStorage.setItem('jwtToken', this.form.token);
           alert(this.form.message);
           this.$router.push({
-            name: 'landingGame'
+            name: 'taverne'
           });
         }
       })

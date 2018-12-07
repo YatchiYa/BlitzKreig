@@ -9,8 +9,8 @@ import gameLand from './homePage/gameLand.vue'
 import taverne from './homePage/taverne/taverne.vue'
 import landingGame from './homePage/gameWorld/landingGame.vue'
 import auth from './homePage/taverne/auth.vue'
-import chat from './homePage/taverne/chat.vue'
-import instantChat from './homePage/taverne/instantChat.vue'
+import presentation from './homePage/taverne/presentation.vue'
+import goals from './homePage/taverne/goals.vue'
 
 
 Vue.use(Router);
@@ -48,15 +48,16 @@ const router =  new Router({
       component: gameLand
     },
     {
-      path: '/chat',
-      name: 'chat',
-      component: chat
+      path: '/presentation',
+      name: 'presentation',
+      component: presentation
     },
     {
-      path: '/instantChat',
-      name: 'instantChat',
-      component: instantChat
+      path: '/goals',
+      name: 'goals',
+      component: goals
     }
+
   ]
 });
 

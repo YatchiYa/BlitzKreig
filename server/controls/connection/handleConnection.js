@@ -117,6 +117,20 @@ router.route('/register/')
   	});
 
 
+    router.route('/getSession')
+    	.get(function(req, res){
+        console.log(session.user)
+        if(session == ""){
+          res.json({
+            user : "annonymous"
+          });
+        }
+        res.json({
+          user: session.user
+        })
+    	});
+
+
     // logout function    /// not really defined to check af
     router.route('/logout')
     	.post(function(req, res){

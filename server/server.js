@@ -76,10 +76,12 @@ mongoose.connection.once('open',function(){
 var router = require('./controls/connection/handleConnection.js');
 var initialization = require('./controls/connection/check.js');
 var chat = require('./controls/chat/chatHandler.js');
+var present = require('./controls/goals/presentHandler.js');
 
 app.use('/api',router);
 app.use('/initialization',initialization);
 app.use('/chat',chat);
+app.use('/present',present);
 
 
 

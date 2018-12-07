@@ -17,6 +17,17 @@ router.get('/landingGame', passport.authenticate('jwt', { session: false}), func
   }
 });
 
+router.get('/goals', passport.authenticate('jwt', { session: false}), function(req, res) {
+  var token = getToken(req.headers);
+  if (token) {
+      return res.send({success: false, status:false, msg: 'Unauthorized.'});
+
+  } else {
+    return res.status(403).send({success: false, msg: 'Unauthorized.'});
+  }
+});
+
+
 getToken = function (headers) {
   if (headers && headers.authorization) {
     var parted = headers.authorization.split(' ');

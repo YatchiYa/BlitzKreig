@@ -104,7 +104,7 @@ overflow: auto;">
 
 
     <footer>
-      <div class="bull Presentation"> <h2> Presentation  </h2></div>
+      <div class="bull Presentation" @click="toPresent()"> <h2> Presentation  </h2></div>
       <div class="bull feedback"  @click="toGame()"> <h2> Game  </h2></div>
       <div class="bull fun"> <h2> Fun </h2></div>
       <div class="bull Goal !"> <h2> Goals  </h2></div>
@@ -188,6 +188,11 @@ export default {
     toGame() {
       this.$router.push({
         name:'landingGame'
+      });
+    },
+    toPresent() {
+      this.$router.push({
+        name:'presentation'
       });
     }
   },
