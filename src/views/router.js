@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Carousel3d from 'vue-carousel-3d'
 import Vuetify from 'vuetify'
+import VueDraggable from 'vue-draggable'
 
 import App from './App.vue'
 import caroussel from './homePage/caroussel.vue'
@@ -16,6 +17,7 @@ import goals from './homePage/taverne/goals.vue'
 Vue.use(Router);
 Vue.use(Carousel3d);
 Vue.use(Vuetify);
+Vue.use(VueDraggable);
 
 
 
