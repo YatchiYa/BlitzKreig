@@ -35,9 +35,6 @@ router.route('/saveTodo')
 			else{
 				todo.user = req.body.user;
 				todo.todos = req.body.todos;
-				todo.desc = req.body.desc;
-				todo.created = new Date();
-				todo.deadline = req.body.deadline;
 				console.log("42" + todo)
 
 				todo.save(function(err, todo_data){
@@ -51,11 +48,11 @@ router.route('/saveTodo')
 })
 
 
-
-router.get('/getTodo', (req, res) => {
-  Todo.find({},(err, todo)=> {
+router.post('/getTod', (req, res) => {
+	Todo.find({},(err, todo)=> {
 		todo.forEach(todox => {
-			if (todox.user == 'yatchi'){
+				console.log("57 Hnadle " + req.body.user)
+			if (todox.user == req.body.user){
 				console.log("77 is " + todox)
 				res.send(todox)
 			}
@@ -63,5 +60,20 @@ router.get('/getTodo', (req, res) => {
 	  })
 	})
 })
+
+
+// try
+/*router.get('/getTodo', (req, res) => {
+  Todo.find({},(err, todo)=> {
+		todo.forEach(todox => {
+				console.log("58" + req.body.user)
+			if (todox.user == 'yatchi'){
+				console.log("77 is " + todox)
+				res.send(todox)
+			}
+
+	  })
+	})
+})*/
 
 module.exports = router;

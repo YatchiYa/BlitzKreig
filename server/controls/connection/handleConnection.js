@@ -119,7 +119,7 @@ router.route('/register/')
 
     router.route('/getSession')
     	.get(function(req, res){
-        console.log(session.user)
+        console.log("122" + session.user)
         if(session == ""){
           res.json({
             user : "annonymous"

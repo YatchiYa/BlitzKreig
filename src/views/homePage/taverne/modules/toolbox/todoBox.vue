@@ -12,9 +12,9 @@
 
 
          <div class="conainer_todos" style="width: 400px;height: 250px;margin: 51px 49px; width: 80%; overflow: auto;" >
-           <div class="todos_list" v-for="(todo, index) in todos" v-bind:key="index">
-             {{ todo }}
-             <div v-on:click="removeLinks(index)" style="background: red none repeat scroll 0% 0%; float: right;width: 10px;margin-right: 5px;border-radius: 60px;cursor: pointer;margin-top: -6px;">x</div>  <!-- Add this -->
+           <div @mouseover="showD(index)"  @mouseleave="hideD(index)" class="todos_list" v-for="(todo, index) in todos" v-bind:key="index">
+             {{ todo.todo }}
+             <div v-show="showDelete" v-on:click="removeLinks(index)" style="background: red none repeat scroll 0% 0%; float: right;width: 10px;margin-right: 5px;border-radius: 60px;cursor: pointer;margin-top: -6px;">x</div>  <!-- Add this -->
            </div>
          </div>
                 <p style="text-align:center;">({{ countTodoDone }}/{{ countLinks }})</p>
@@ -37,7 +37,8 @@ export default {
   data() {                                     // Add this:
     return {
       newTodo: '',
-      msg: ''
+      msg: '',
+      showDelete: false
     }
   },
   components: { VueDraggableResizable},
@@ -45,7 +46,9 @@ export default {
       ...mapState('ToDo',[
       'todos'
     ]),
-
+      ...mapState('ToDo',[
+      'user'
+    ]),
     ...mapGetters('ToDo',[
       'countLinks'
     ]),
@@ -55,18 +58,24 @@ export default {
 
   },
 
-  methods: {                                   // Add this:
+  methods: {
+    showD(e){
+      this.showDelete = true
+    },
+    hideD(e){
+      this.showDelete = false
+    },
     ...mapMutations('ToDo',[
       'ADD_LINK'
     ]),
-    ...mapActions('ToDo',[                  // Add this
+    ...mapActions('ToDo',[
       'removeLink'
     ]),
     addLink: function() {
       this.ADD_LINK(this.newTodo)
       this.newTodo = ''
     },
-    removeLinks: function(todo) {    // Add this
+    removeLinks: function(todo) {
       this.removeLink(todo)
     },
 
@@ -78,22 +87,39 @@ export default {
       });
     },
 
+    // get User
+    ...mapMutations('ToDo',[
+      'GET_USER'
+    ]),
+    ...mapActions('ToDo',[
+      'getUser'
+    ]),
+    getUsers(){
+      this.GET_USER()
+    },
+
 
     // get All Todos
     ...mapMutations('ToDo',[
       'GET_TODOS'
     ]),
-    ...mapActions('ToDo',[                  // Add this
+    ...mapActions('ToDo',[
       'getTodos'
     ]),
     getTodo(){
-      this.GET_TODOS()
-    }
+      this.GET_TODOS(this.user)
+    },
+
+
 
 
   },
   created() {
-      this.getTodo()
+      this.getUsers(),
+
+      setTimeout(() => {
+        this.getTodo()
+    }, 2500)
   }
 }
 </script>
