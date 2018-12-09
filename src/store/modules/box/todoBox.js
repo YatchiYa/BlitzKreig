@@ -1,33 +1,66 @@
+import axios from 'axios'
+import Vue from 'vue'
+Vue.use(axios)
+
 export default {
 	namespaced: true,
   state: {
-    title: 'My Custom Title',
-    links: [
+    todos: [
       'http://google.com',
       'http://coursetro.com',
       'http://youtube.com'
-    ]
+    ],
+		user : 'yatchi',
+		desc: 'none',
+		deadline: 0,
+		countTodoDone: 0
   },
   getters: {
     countLinks: state => {
-      return state.links.length
+      return state.todos.length
+    },
+		countTodoDone: state => {
+      return state.countTodoDone  // a verifier
     }
+
+
   },
   mutations: {
-    ADD_LINK: (state, link) => {
-      state.links.push(link)
+		GET_TODOS: state => {
+			axios.get(`http://localhost:3000/todo/getTodo`)
+	    .then(response => {
+		    console.log("33" + response.data.todos)
+	      state.todos = response.data.todos
+	      return state.todos  // a verifier
+	    })
+	    .catch(e => {
+	      console.log(e)
+	    })
+		},
+    ADD_LINK: (state, todo) => {
+      state.todos.push(todo)
+			axios.post(`http://localhost:3000/todo/saveTodo`, {user : state.user, todos : state.todos, desc: state.desc, deadline: state.deadline })
+      .then(response => {
+					console.log(response.data)
+      })
+      .catch(e => {
+        console.log(" error ")
+      })
     },
-    REMOVE_LINK: (state, link) => {        // Add this:
-      state.links.splice(link, 1)
+    REMOVE_LINK: (state, todo) => {        // Add this:
+      state.todos.splice(todo, 1)
     },
     REMOVE_ALL: (state) => {                     // Add this
-      state.links = []
+      state.todos = []
     }
   },
   actions: {
-    removeLink: (context, link) => {       // Add this:
-      context.commit("REMOVE_LINK", link)
+    removeLink: (context, todo) => {       // Add this:
+      context.commit("REMOVE_LINK", todo)
     },
+		getTodos: (context, todo) => {
+			context.commit(GET_TODOS)
+		},
 
     removeAll ({commit}) {                       // Add this
      return new Promise((resolve, reject) => {

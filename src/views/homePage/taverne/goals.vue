@@ -1,13 +1,8 @@
 <template>
-    <div id="goals" style="color: white;">
-      <h1> Set Up Your Goals </h1>
+    <div ref="goals" id="goals" style="color: white;">
+      <h1> Set Up Your Challenges </h1>
 
-      <div id="general_part" style="position: absolute;">
-
-      </div>
-
-     <todoBox id="todoBox" />
-
+      <todoBox v-show="ToDoShow" id="todoBox" />
 
     </div>
 </template>
@@ -16,16 +11,46 @@
 import { mapState, mapGetters, mapMutations, mapActions   } from 'vuex'
 import todoBox from './modules/toolbox/todoBox.vue'
 
+
 export default {
   name: 'goals',
   data() {                                     // Add this:
     return {
-      newLink: '',
-      msg: ''
     }
   },
-  components: {todoBox }
+  components: {todoBox },
+  methods: {
+    ...mapMutations('toolbox',[
+      'HideToDo'
+    ]),
 
+    hideToDo(){
+      this.HideToDo('i')
+    }
+  },
+  computed: {
+      ...mapState('toolbox',[
+      'ToDoShow'
+    ])
+  },
+  created() {
+    // const button = this.$refs.goals
+    console.log(this.ToDoShow)
+    // showing the different compenets
+
+    window.addEventListener('keydown', (e) => {
+      console.log(e)
+      switch(e.key){
+        case 'F1':
+         this.hideToDo()
+        break;
+      }
+
+
+    });
+
+
+  }
 }
 </script>
 
@@ -42,14 +67,17 @@ export default {
     background-size: 100% 100%;
 }
 
-#todoBox{
-  position: absolute;
-  width: 500px;
-  height: 500px;
-  border: 1px solid black;
-  border-radius : 10px;
-  text-align: center;
-  background : grey;
+#todoBox {
+
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: rgba(20, 221, 128, 0.5);
+    border: 1px solid #52ff00;
+    border-radius: 22px;
+    box-shadow: 5px 5px 5px #92ff00;
+
 }
+
 
 </style>
