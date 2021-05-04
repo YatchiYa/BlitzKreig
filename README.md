@@ -13,18 +13,3 @@ https://nystudio107.com/blog/an-annotated-webpack-4-config-for-frontend-web-deve
 
 
 
-
-problemes :
-
-fuckibg VUEXXXXX !!!! i need to do that !!!!!
-
-
-  // path a definir :::  exemple :
-    when we click on landingGame Page, it will be redirected to authentification page and then whe we connect it will --> landingGame Page
-      when we click on chat Page, it will be redirected to authentification page and then whe we connect it will --> chat Page
-
-    // logout function    /// not really defined to check after
-    // presentation : // username !! a definir, provisoirement la personne devrai se connecter dabord !!
-    // afficher le retour a la ligne dans le textArea du modal ....
-    
-    // add Emp taverne !!!
