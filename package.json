@@ -32,7 +32,7 @@
     "less-loader": "^4.1.0",
     "lodash": "^4.17.11",
     "mongo-connect": "0.0.6",
-    "mongoose": "^5.3.14",
+    "mongoose": "^5.7.5",
     "morgan": "^1.9.1",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
